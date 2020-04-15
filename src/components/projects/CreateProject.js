@@ -14,8 +14,10 @@ class CreateProject extends Component {
         })
     }
     handleSubmit = (e) => {
+        console.log(this.props)
         e.preventDefault()
         this.props.createProject(this.state)
+        this.props.history.push('/')
     }
     render() {
         const { auth } = this.props
@@ -33,7 +35,7 @@ class CreateProject extends Component {
                         <textarea id="content" className="materialize-textarea" onChange={this.handleChange}></textarea>
                     </div>
                     <div className="input-field">
-                        <button className="btn pink lighten-1 z-depth-0">Create</button>
+                        <button className="btn green darken-1 z-depth-0">Create</button>
                     </div>
                 </form>
             </div>

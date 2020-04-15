@@ -56,3 +56,8 @@ code {
 @-webkit-keyframes spin {
   to { -webkit-transform: rotate(360deg); }
 }
+ 
+.mdb-logo {
+  height: 50px;
+  margin-top: 5px;
+}

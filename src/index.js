@@ -24,14 +24,22 @@ const store = createStore(
   )
 );
 
+//construct required properties
+const profileSpecificProps = {
+  userProfile: 'users',
+  useFirestoreForProfile: true,
+  enableRedirectHandling: false,
+  resetBeforeLogin: false
+}
+
+//second config propery added
 const rrfProps = {
   firebase,
   config: fbConfig,
+  //second config added here
+  config: profileSpecificProps,
   dispatch: store.dispatch,
-  createFirestoreInstance,
-  userProfile: 'users', // where profiles are stored in database
-  presence: 'presence', // where list of online users is stored in database
-  sessions: 'sessions' // where list of user sessions is stored in database (presence must be enabled)
+  createFirestoreInstance
 };
 
 const LoadingScreen = () => {
