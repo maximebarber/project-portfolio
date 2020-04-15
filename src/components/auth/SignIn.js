@@ -13,6 +13,7 @@ class SignIn extends Component {
             [e.target.id]: e.target.value
         })
     }
+    // comment
     handleSubmit = (e) => {
         e.preventDefault()
         this.props.signIn(this.state)

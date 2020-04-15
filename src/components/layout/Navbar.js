@@ -9,7 +9,7 @@ const Navbar = (props) => {
     const { auth, profile } = props
     const links = auth.uid ? <SignedInLinks profile={profile} /> : <SignedOutLinks />
     return (
-        <nav className="nav-wrapper grey">
+        <nav className="nav-wrapper grey darken-3">
             <div className="container">
                 <Link to="/" className="brand-logo valign-wrapper">
                     <img src={Logo} alt="logo" className=" mdb-logo" />
