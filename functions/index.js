@@ -4,6 +4,11 @@ admin.initializeApp(functions.config().firebase);
 
 // Once done, deploy function with following command: firebase deploy --only functions
 
+/**
+ * Once done, deploy function with following command:
+ * @command firebase deploy --only functions
+ */
+
 exports.helloWorld = functions.https.onRequest((request, response) => {
     response.send("Hello from Firebase test!");
 });
@@ -21,8 +26,8 @@ exports.projectCreated = functions.firestore
     .onCreate((snap, context) => {
         const project = snap.data();
         const notification = {
-            content: "New project added",
-            user: `${project.authorFirstName} ${project.authorLastname}`,
+            content: "created a new project",
+            user: `${project.authorFirstName} ${project.authorLastName}`,
             time: admin.firestore.FieldValue.serverTimestamp(),
         };
         return createNotification(notification);
@@ -34,7 +39,7 @@ exports.userJoined = functions.auth.user().onCreate(async (user) => {
     const doc = await admin.firestore().collection("users").doc(user.uid).get();
     const newUser = doc.data();
     const notification = {
-        content: "New user created",
+        content: "joined the party",
         user: `${newUser.firstName} ${newUser.lastName}`,
         time: admin.firestore.FieldValue.serverTimestamp(),
     };
